@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحكم المستخدم | إدارة السيرة الذاتية والأبحاث ورموز QR</title>
+  <meta name="description" content="لوحة تحكم مخصصة لإدارة النصوص، الأبحاث العلمية، الكتب، الشهادات، وحسابات التواصل الاجتماعي المربوطة برموز QR.">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="dashboard.html" class="brand-logo">
+        <div class="brand-icon">
+          <i class="fa-solid fa-sliders"></i>
+        </div>
+        <span>لوحة تحكم العميل | Admin Dashboard</span>
+      </a>
+      <div class="nav-links">
+        <a href="profile.html" target="_blank" class="btn-nav btn-nav-primary">
+          <i class="fa-solid fa-eye"></i> معاينة السيرة الذاتية الحية
+        </a>
+        <a href="index.html" class="btn-nav btn-nav-secondary">
+          <i class="fa-solid fa-qrcode"></i> استوديو الـ QR العام
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Header -->
+  <header class="dash-header container">
+    <div>
+      <h1 class="hero-title" style="font-size: 2.2rem; text-align: right; margin-bottom: 0.5rem;">
+        إدارة وتعديل محتوى <span>السيرة الذاتية</span>
+      </h1>
+      <p style="color: var(--text-secondary); font-size: 1rem;">
+        من هنا يمكنك إضافة وتعديل وحذف الأبحاث، الكتب، الشهادات، وحسابات التواصل، وتفعيل رموز QR لكل عنصر.
+      </p>
+    </div>
+    <button id="btn-reset-data" class="btn-nav btn-nav-secondary" style="border-color: rgba(255,71,87,0.3); color: var(--accent-danger);">
+      <i class="fa-solid fa-rotate-left"></i> استعادة البيانات النموذجية الافتراضية
+    </button>
+  </header>
+
+  <!-- Main Dashboard Tabs Container -->
+  <main class="container" style="margin-bottom: 4rem;">
+    
+    <!-- Tab Navigation Buttons -->
+    <div class="dash-nav-tabs">
+      <button class="tab-btn active" data-tab="tab-profile">
+        <i class="fa-solid fa-user-gear"></i> البيانات الشخصية
+      </button>
+      <button class="tab-btn" data-tab="tab-social">
+        <i class="fa-solid fa-share-nodes"></i> حسابات التواصل & QR
+      </button>
+      <button class="tab-btn" data-tab="tab-research">
+        <i class="fa-solid fa-microscope"></i> الأبحاث والأوراق (CRUD)
+      </button>
+      <button class="tab-btn" data-tab="tab-certs">
+        <i class="fa-solid fa-award"></i> الشهادات والاعتمادات
+      </button>
+      <button class="tab-btn" data-tab="tab-books">
+        <i class="fa-solid fa-book-open"></i> الكتب والمؤلفات
+      </button>
+    </div>
+
+    <!-- Tab 1: Personal Profile Form -->
+    <div id="tab-profile" class="tab-pane active">
+      <div class="glass-card panel-box">
+        <h2 class="panel-title">
+          <i class="fa-solid fa-id-card" style="color: var(--primary-cyan);"></i> تعديل المعلومات الأساسية والسيرة الذاتية
+        </h2>
+
+        <form id="form-profile">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+            
+            <div class="form-group">
+              <label class="form-label">الاسم الكامل بالألقاب الأكاديمية:</label>
+              <input type="text" name="name" class="form-input" style="direction: rtl; text-align: right;" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">المسمى الوظيفي والأكاديمي:</label>
+              <input type="text" name="title" class="form-input" style="direction: rtl; text-align: right;" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">الجامعة / الجهة الأكاديمية:</label>
+              <input type="text" name="institution" class="form-input" style="direction: rtl; text-align: right;">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">الموقع والتواجد:</label>
+              <input type="text" name="location" class="form-input" style="direction: rtl; text-align: right;">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">البريد الإلكتروني الرسمي:</label>
+              <input type="email" name="email" class="form-input">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">رابط الصورة الشخصية (Avatar Image URL):</label>
+              <input type="url" name="avatar" class="form-input">
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">نبذة السيرة الذاتية (Bio):</label>
+            <textarea name="bio" class="form-textarea" style="direction: rtl; text-align: right;"></textarea>
+          </div>
+
+          <button type="submit" class="btn-action btn-primary-action" style="width: auto; padding: 0.8rem 2rem;">
+            <i class="fa-solid fa-floppy-disk"></i> حفظ التغييرات فورياً
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tab 2: Social Links CRUD -->
+    <div id="tab-social" class="tab-pane">
+      <div class="glass-card panel-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <h2 class="panel-title" style="margin-bottom: 0; border: none; padding: 0;">
+            <i class="fa-solid fa-share-nodes" style="color: var(--primary-cyan);"></i> إدارة روابط الحسابات ورموز QR الفرعية
+          </h2>
+          <button class="btn-action btn-primary-action" style="width: auto;" onclick="openAddSocialModal()">
+            <i class="fa-solid fa-plus"></i> إضافة حساب جديد
+          </button>
+        </div>
+
+        <table class="dash-item-table">
+          <thead>
+            <tr>
+              <th>المنصة</th>
+              <th>اسم الحساب / الرقم (Handle)</th>
+              <th>حالة الـ QR</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="table-social-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 3: Research CRUD -->
+    <div id="tab-research" class="tab-pane">
+      <div class="glass-card panel-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <h2 class="panel-title" style="margin-bottom: 0; border: none; padding: 0;">
+            <i class="fa-solid fa-microscope" style="color: var(--primary-cyan);"></i> إدارة الأبحاث والأوراق العلمية
+          </h2>
+          <button class="btn-action btn-primary-action" style="width: auto;" onclick="openAddResearchModal()">
+            <i class="fa-solid fa-plus"></i> إضافة بحث جديد
+          </button>
+        </div>
+
+        <table class="dash-item-table">
+          <thead>
+            <tr>
+              <th>عنوان البحث</th>
+              <th>المجلة / السنة</th>
+              <th>الاستشهادات</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="table-research-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 4: Certificates CRUD -->
+    <div id="tab-certs" class="tab-pane">
+      <div class="glass-card panel-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <h2 class="panel-title" style="margin-bottom: 0; border: none; padding: 0;">
+            <i class="fa-solid fa-award" style="color: var(--primary-cyan);"></i> إدارة الشهادات الأكاديمية والاعتمادات
+          </h2>
+          <button class="btn-action btn-primary-action" style="width: auto;" onclick="openAddCertModal()">
+            <i class="fa-solid fa-plus"></i> إضافة شهادة جديدة
+          </button>
+        </div>
+
+        <table class="dash-item-table">
+          <thead>
+            <tr>
+              <th>عنوان الشهادة / الجائزة</th>
+              <th>الجهة المانحة / السنة</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="table-certs-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 5: Books CRUD -->
+    <div id="tab-books" class="tab-pane">
+      <div class="glass-card panel-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <h2 class="panel-title" style="margin-bottom: 0; border: none; padding: 0;">
+            <i class="fa-solid fa-book-open" style="color: var(--primary-cyan);"></i> إدارة الكتب والمؤلفات
+          </h2>
+          <button class="btn-action btn-primary-action" style="width: auto;" onclick="openAddBookModal()">
+            <i class="fa-solid fa-plus"></i> إضافة كتاب جديد
+          </button>
+        </div>
+
+        <table class="dash-item-table">
+          <thead>
+            <tr>
+              <th>عنوان الكتاب</th>
+              <th>دار النشر / السنة</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="table-books-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>جميع الحقوق محفوظة © 2026 | لوحة تحكم وإدارة المحتوى الذكية للملف الأكاديمي والـ QR</p>
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+
+</body>
+</html>

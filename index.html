@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استوديو ومولد رمز QR المحترف | QR Code Studio</title>
+  <meta name="description" content="إنشاء وتصميم رمز QR مخصص فائق الجمال للتوجيه نحو الصفحة الشخصية والشهادات والأبحاث العلمية والكتب.">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- QRCode JS Library CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">
+          <i class="fa-solid fa-qrcode"></i>
+        </div>
+        <span>QR Code Studio | استوديو الرموز العام</span>
+      </a>
+      <div class="nav-links">
+        <a href="dashboard.html" class="btn-nav btn-nav-primary">
+          <i class="fa-solid fa-sliders"></i> لوحة تحكم العميل والتعديل
+        </a>
+        <a href="profile.html" target="_blank" class="btn-nav btn-nav-secondary">
+          <i class="fa-solid fa-user-graduate"></i> السيرة الذاتية الحية
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero-header container">
+    <div class="badge-tag">
+      <i class="fa-solid fa-wand-magic-sparkles"></i> مولّد الرموز العام والتصاميم الفاخرة
+    </div>
+    <h1 class="hero-title">
+      استوديو إنشاء وتصميم <span>QR Code</span> لأي رابط إلكتروني
+    </h1>
+    <p class="hero-subtitle">
+      صمّم رموز QR مخصصة بألوان فائقة الدقة وأشكال متعددة، واختبرها مباشرةً وحمّلها بصور عالية الجودة للطباعة والتصاميم.
+    </p>
+  </header>
+
+  <!-- Main Generator & Showcase Grid -->
+  <main class="container">
+    <div class="studio-grid">
+
+      <!-- Left Panel: Controls & Customization -->
+      <div class="glass-card panel-box">
+        <h2 class="panel-title">
+          <i class="fa-solid fa-sliders" style="color: var(--primary-cyan);"></i> إعدادات الرابط وتخصيص الرمز
+        </h2>
+
+        <!-- Input URL -->
+        <div class="form-group">
+          <label for="qr-url-input" class="form-label">
+            <i class="fa-solid fa-globe"></i> رابط صفحة الويب المستهدفة عند تصوير الرمز:
+          </label>
+          <input type="url" id="qr-url-input" class="form-input" placeholder="https://example.com/profile.html" value="">
+          
+          <div class="preset-chips">
+            <span class="chip-btn active" data-preset="profile">
+              <i class="fa-solid fa-user-graduate"></i> السيرة الذاتية والأبحاث
+            </span>
+            <span class="chip-btn" data-preset="research">
+              <i class="fa-solid fa-microscope"></i> قسم الأبحاث
+            </span>
+            <span class="chip-btn" data-preset="books">
+              <i class="fa-solid fa-book"></i> الكتب والمؤلفات
+            </span>
+            <span class="chip-btn" data-preset="whatsapp">
+              <i class="fa-brands fa-whatsapp"></i> واتساب مباشر
+            </span>
+          </div>
+        </div>
+
+        <!-- Visual Styling Controls -->
+        <div class="form-group" style="margin-top: 2rem;">
+          <label class="form-label">
+            <i class="fa-solid fa-palette"></i> تخصيص الألوان والنمط البصري:
+          </label>
+          
+          <div class="tools-grid">
+            <div class="color-picker-box">
+              <input type="color" id="fg-color-input" class="color-input" value="#090d16">
+              <div>
+                <div style="font-size: 0.85rem; font-weight: 700;">لون الرمز (Foreground)</div>
+                <div style="font-size: 0.75rem; color: var(--text-secondary);">لون النقاط والأركان</div>
+              </div>
+            </div>
+
+            <div class="color-picker-box">
+              <input type="color" id="bg-color-input" class="color-input" value="#ffffff">
+              <div>
+                <div style="font-size: 0.85rem; font-weight: 700;">لون الخلفية (Background)</div>
+                <div style="font-size: 0.75rem; color: var(--text-secondary);">خلفية البطاقة</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Target Page Brief Preview -->
+        <div class="glass-card" style="padding: 1.25rem; background: rgba(0, 242, 254, 0.04); border-color: rgba(0, 242, 254, 0.2); margin-top: 1.5rem;">
+          <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--primary-cyan); display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-circle-info"></i> لوحة التحكم والسيرة الذاتية التفاعلية:
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            يمكن للمستخدم الدخول إلى <a href="dashboard.html" style="color: var(--primary-cyan); font-weight: 700;">لوحة التحكم (Dashboard)</a> لإضافة وتعديل وحذف الأبحاث، الكتب، الشهادات، وروابط التواصل الاجتماعي بكل سهولة!
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Panel: Live QR Preview Card inside Phone Mockup -->
+      <div class="glass-card preview-panel">
+        
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          
+          <div class="qr-wrapper">
+            <div id="qrcode-canvas-container"></div>
+            <!-- Animated Laser Scan overlay -->
+            <div class="scan-line"></div>
+          </div>
+
+          <div class="qr-info-text">
+            <span>عند مسح الرمز بالكاميرا سيتم التوجيه إلى:</span>
+            <div class="qr-target-url" id="display-target-url">profile.html</div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-buttons">
+            <button id="btn-simulate-scan" class="btn-action btn-gold-action">
+              <i class="fa-solid fa-camera"></i> تجربة فحص الكاميرا (Scan Simulator)
+            </button>
+
+            <button id="btn-test-link" class="btn-action btn-primary-action">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> فتح واختبار الرابط المباشر
+            </button>
+
+            <div class="action-row">
+              <button id="btn-download-png" class="btn-action btn-secondary-action">
+                <i class="fa-solid fa-download"></i> تحميل PNG
+              </button>
+
+              <button id="btn-copy-link" class="btn-action btn-secondary-action">
+                <i class="fa-solid fa-link"></i> نسخ الرابط
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>جميع الحقوق محفوظة © 2026 | استوديو ومولد رموز الـ QR ومحرر السيرة الذاتية الذكي</p>
+    </div>
+  </footer>
+
+  <!-- App JavaScript logic -->
+  <script src="app.js"></script>
+
+</body>
+</html>
